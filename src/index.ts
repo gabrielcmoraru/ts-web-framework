@@ -1,21 +1,11 @@
 import { User } from './models/Users';
 
-const user = new User({ name: 'bobs', age: 31 });
+const user = new User({ id: 2 });
+user.set({ age: 999 });
+user.save();
 
-user.on('change', () => {
-  console.log('ch 1');
-});
-user.on('change', () => {
-  console.log('ch 2');
-});
-user.on('asd', () => {
-  console.log('asd');
-});
+// user.fetch();
 
-user.trigger('change');
-user.trigger('asd');
-
-user.set({ name: 'Adri' });
-console.log(user.get('name'));
-console.log(user.get('age'));
-console.log(user);
+// setTimeout(() => {
+//   console.log(user);
+// }, 2000);
